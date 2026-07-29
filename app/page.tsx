@@ -3,6 +3,7 @@ import { About } from "@/components/sections/About";
 import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
 import { Skills } from "@/components/sections/Skills";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
+import { Achievements } from "@/components/sections/Achievements";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ExperienceTimeline />
       <Skills />
       <FeaturedProjects />
+      <Achievements />
     </main>
   );
 }
