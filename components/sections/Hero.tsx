@@ -27,6 +27,9 @@ function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+const nameWords = hero.name.split(" ");
+const initials = (nameWords[0][0] + nameWords[nameWords.length - 1][0]).toUpperCase();
+
 export function Hero() {
   return (
     <section
@@ -107,7 +110,9 @@ export function Hero() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="flex size-48 shrink-0 items-center justify-center rounded-4xl border border-white/10 bg-gradient-to-br from-brand-violet to-brand-lilac shadow-[0_0_80px_-20px_rgba(108,76,241,0.6)] sm:size-64"
       >
-        <span className="font-heading text-5xl font-semibold text-white sm:text-6xl">YP</span>
+        <span className="font-heading text-5xl font-semibold text-white sm:text-6xl">
+          {initials}
+        </span>
       </motion.div>
     </section>
   );
