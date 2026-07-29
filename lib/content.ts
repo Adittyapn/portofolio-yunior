@@ -9,11 +9,11 @@ import type {
 export const hero = {
   name: "Yunior Prassetia Putra",
   title: "Social Media Specialist & Digital Marketing Strategist",
-  headline: "I Turn Scrolls Into Growth — One Story-Driven Campaign at a Time.",
+  headline: "Content people stop for. Strategy that keeps them around.",
   subtext:
-    "I plan, create, and optimize content that turns casual scrollers into engaged audiences — blending data-driven strategy with storytelling across Instagram, TikTok, and beyond.",
-  primaryCta: { label: "Say Hello", href: "mailto:yuniorprassetia2@gmail.com" },
-  secondaryCta: { label: "View My Work", href: "#projects" },
+    "Bandung-based social media specialist. I plan the calendar, shape the hook, edit the story, and read the numbers after it ships.",
+  primaryCta: { label: "See the work", href: "#projects" },
+  secondaryCta: { label: "Email me", href: "mailto:yuniorprassetia2@gmail.com" },
   socials: {
     linkedin: "https://www.linkedin.com/in/yuniorprassetia/",
     email: "yuniorprassetia2@gmail.com",
@@ -103,6 +103,12 @@ export const projects: ProjectCaseStudy[] = [
     lessons:
       "Consistency and audience-behavior analysis can outperform ad spend when the content actually earns attention.",
     tags: ["Organic Strategy", "Content Optimization", "Conversion"],
+    images: [
+      "/honda (1).jpeg",
+      "/honda (2).jpeg",
+      "/honda (3).jpeg",
+      "/honda.jpeg",
+    ],
   },
   {
     slug: "freelance-food-content",
@@ -120,6 +126,7 @@ export const projects: ProjectCaseStudy[] = [
       "Measurable organic follower growth across managed accounts, driven directly by stronger storytelling and consistent posting.",
     lessons: "The first three seconds decide everything — editing is strategy, not just polish.",
     tags: ["Video Editing", "Short-Form Content", "Storytelling"],
+    images: ["/shooting.jpeg"],
   },
   {
     slug: "motorcycle-generator-project",
@@ -138,6 +145,13 @@ export const projects: ProjectCaseStudy[] = [
     lessons:
       "The same skills that run a content calendar — timelines, communication, prioritization — scale to leading technical teams outside your home field.",
     tags: ["Project Management", "Cross-functional Leadership", "Innovation"],
+    images: [
+      "/mesin  (2).jpeg",
+      "/mesin  (3).jpeg",
+      "/mesin  (4).jpeg",
+      "/mesin  (5).jpeg",
+      "/mesin  (6).jpeg",
+    ],
   },
   {
     slug: "seo-digital-marketing-internship",
@@ -156,6 +170,12 @@ export const projects: ProjectCaseStudy[] = [
     lessons:
       "SEO and social aren't separate channels — they compound when the content strategy treats them as one system.",
     tags: ["SEO", "Content Strategy", "Campaign Support"],
+    images: [
+      "/dishut.jpeg",
+      "/dishut (1).jpeg",
+      "/dishut (2).jpeg",
+      "/dishut (3).jpeg",
+    ],
   },
 ];
 
@@ -256,16 +276,22 @@ export const achievements: Achievement[] = [
 ];
 
 export const certifications: Certification[] = [
-  { name: "Lensetek AI-Driven Digital Marketing Certification", date: "May 2025" },
-  { name: "Social Media Officer Intern Certification", date: "April 2026" },
+  {
+    name: "Lensetek AI-Driven Digital Marketing Certification",
+    date: "May 2025",
+    image: "/lencetek.jpeg",
+  },
+  {
+    name: "Social Media Officer Intern Certification",
+    date: "April 2026",
+    image: "/sosial media.jpeg",
+  },
 ];
 
-export const testimonialsPlaceholderCount = 3;
-
 export const contact = {
-  heading: "Let's Build Something Great Together.",
+  heading: "Have a campaign that needs a sharper story?",
   subtext:
-    "Have a brand that needs a stronger digital presence, or a project that needs someone who can turn strategy into content people actually stop for? I'd love to hear about it.",
+    "Tell me what you are trying to move—attention, engagement, or action. I’ll bring the content plan and the follow-through.",
   email: "yuniorprassetia2@gmail.com",
   linkedin: "https://www.linkedin.com/in/yuniorprassetia/",
   location: "Bandung, Indonesia",

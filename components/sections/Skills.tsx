@@ -1,50 +1,33 @@
-"use client";
-
-import { motion } from "motion/react";
-import SpotlightCard from "@/components/SpotlightCard";
-import { Progress } from "@/components/ui/progress";
 import { skillCategories } from "@/lib/content";
-import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 export function Skills() {
   return (
-    <section id="skills" aria-label="Skills" className="mx-auto w-full max-w-5xl px-6 py-24">
-      <motion.h2
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="mb-12 font-heading text-3xl font-semibold text-foreground sm:text-4xl"
-      >
-        Skills
-      </motion.h2>
+    <section id="skills" aria-label="Skills" className="mx-auto w-full max-w-6xl px-6 py-24">
+      <div className="mb-12 max-w-2xl">
+        <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-pink">Working toolkit</p>
+        <h2 className="mt-3 font-heading text-4xl font-extrabold tracking-[-0.04em] text-foreground sm:text-5xl">
+          What I actually use.
+        </h2>
+        <p className="mt-4 text-muted-foreground">
+          No arbitrary proficiency bars—just the disciplines and tools I use to move work from brief to publish.
+        </p>
+      </div>
 
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        className="grid gap-6 sm:grid-cols-2"
-      >
+      <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
         {skillCategories.map((category) => (
-          <motion.div key={category.name} variants={fadeInUp}>
-            <SpotlightCard spotlightColor="rgba(155, 123, 255, 0.35)" className="!border-border !bg-card h-full">
-              <h3 className="mb-5 font-heading text-lg font-semibold text-foreground">{category.name}</h3>
-              <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="mb-1.5 flex items-center justify-between text-sm">
-                      <span className="text-foreground">{skill.name}</span>
-                      <span className="text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <Progress value={skill.level} className="h-1.5" />
-                  </div>
-                ))}
-              </div>
-            </SpotlightCard>
-          </motion.div>
+          <div key={category.name} className="border-t-2 border-foreground pt-4">
+            <h3 className="font-heading text-lg font-bold text-foreground">{category.name}</h3>
+            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+              {category.skills.map((skill) => (
+                <li key={skill.name} className="flex gap-2">
+                  <span aria-hidden="true" className="text-brand-violet">↳</span>
+                  {skill.name}
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

@@ -18,6 +18,7 @@ export type ProjectCaseStudy = {
   results: string;
   lessons: string;
   tags: string[];
+  images: string[];
 };
 
 export type SkillCategory = {
@@ -35,4 +36,5 @@ export type Achievement = {
 export type Certification = {
   name: string;
   date: string;
+  image: string;
 };

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   Dialog,
   DialogContent,
@@ -33,7 +34,7 @@ export function ProjectDialog({
 }) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto">
+      <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto rounded-none border-2 border-foreground bg-popover shadow-[7px_7px_0_#244bff]">
         <DialogHeader>
           <DialogTitle className="font-heading text-2xl">{project.title}</DialogTitle>
           <DialogDescription>
@@ -43,9 +44,23 @@ export function ProjectDialog({
 
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
-            <Badge key={tag} variant="secondary">
+            <Badge key={tag} variant="outline" className="rounded-none">
               {tag}
             </Badge>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          {project.images.map((image, index) => (
+            <Image
+              key={image}
+              src={image}
+              alt={`${project.title} documentation ${index + 1}`}
+              width={480}
+              height={640}
+              sizes="(min-width: 640px) 296px, calc(50vw - 34px)"
+              className="aspect-3/4 w-full border border-foreground/20 object-cover"
+            />
           ))}
         </div>
 
