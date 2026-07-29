@@ -4,6 +4,7 @@ import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
 import { Skills } from "@/components/sections/Skills";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { Achievements } from "@/components/sections/Achievements";
+import { Testimonials } from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Skills />
       <FeaturedProjects />
       <Achievements />
+      <Testimonials />
     </main>
   );
 }
