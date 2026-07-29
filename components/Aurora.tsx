@@ -120,7 +120,9 @@ interface AuroraProps {
 export default function Aurora(props: AuroraProps) {
   const { colorStops = ['#5227FF', '#7cff67', '#5227FF'], amplitude = 1.0, blend = 0.5 } = props;
   const propsRef = useRef<AuroraProps>(props);
-  propsRef.current = props;
+  useEffect(() => {
+    propsRef.current = props;
+  });
 
   const ctnDom = useRef<HTMLDivElement>(null);
 
@@ -139,6 +141,7 @@ export default function Aurora(props: AuroraProps) {
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     gl.canvas.style.backgroundColor = 'transparent';
 
+    // eslint-disable-next-line prefer-const -- reassigned below (`program = new Program(...)`); confirmed via `tsc` that `const` here is a compile error, so this is a lint false positive.
     let program: Program | undefined;
 
     function resize() {
@@ -205,6 +208,7 @@ export default function Aurora(props: AuroraProps) {
       }
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- blend/colorStops intentionally excluded: they're read via propsRef inside the animation loop so the WebGL context doesn't reinitialize on every prop change.
   }, [amplitude]);
 
   return <div ref={ctnDom} className="w-full h-full" />;

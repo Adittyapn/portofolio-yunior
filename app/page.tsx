@@ -6,18 +6,22 @@ import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { Achievements } from "@/components/sections/Achievements";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col">
-      <Hero />
-      <About />
-      <ExperienceTimeline />
-      <Skills />
-      <FeaturedProjects />
-      <Achievements />
-      <Testimonials />
-      <Contact />
-    </main>
+    <>
+      <main className="flex flex-1 flex-col">
+        <Hero />
+        <About />
+        <ExperienceTimeline />
+        <Skills />
+        <FeaturedProjects />
+        <Achievements />
+        <Testimonials />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
